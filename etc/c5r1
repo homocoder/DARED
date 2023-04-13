@@ -1,0 +1,17 @@
+## This file sets-up a DARED environment
+## Fernando.Morales@alma.cl
+#
+## The variables to modify are
+## DARED = This environment mnemonic name
+## DARED_ROOT = Root directory of this DARED
+## DA_GROUP = Data Analysts Unix group
+#
+DARED=c5r1
+DARED_ROOT=/opt/dared/opt/c5r1
+DA_GROUP=science
+#
+# ########################################
+# ### Do not modify the following line ###
+# ########################################
+#
+source $DARED_ROOT/etc/dared

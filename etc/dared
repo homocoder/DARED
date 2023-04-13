@@ -1,0 +1,158 @@
+# This file sets-up a DARED environment
+# Fernando.Morales@alma.cl
+
+#########################################
+### Do not modify the following lines ###
+#########################################
+
+# Unset the world
+
+unset _DARED
+unset _DARED_ROOT
+unset _DA_GROUP
+
+_DARED_ROOT=$DARED_ROOT
+_DARED=$DARED
+_DA_GROUP=$DA_GROUP
+
+for i in $(env | awk -F"=" '{print $1}') ; do unset $i ; done &> /dev/null
+
+#
+DARED=$_DARED
+DARED_ROOT=$_DARED_ROOT
+DA_GROUP=$_DA_GROUP
+
+# OS
+export PATH=/bin:/usr/bin
+export HOSTNAME=$(hostname)
+export USER=$(whoami)
+export HOME=~
+export TMPDIR=$DARED_ROOT/mnt/tmp
+export TERM='xterm'
+export PS1='['$DARED'][\u@\h \W]\\$ '
+ulimit -Sn 4096
+umask 0002
+
+# Set locale
+export LANG="en_US.UTF-8"
+export LANGUAGE="en_US.UTF-8"
+export LC_CTYPE="en_US.UTF-8"
+export LC_NUMERIC="en_US.UTF-8"
+export LC_TIME="en_US.UTF-8"
+export LC_COLLATE="en_US.UTF-8"
+export LC_MONETARY="en_US.UTF-8"
+export LC_MESSAGES="en_US.UTF-8"
+export LC_PAPER="en_US.UTF-8"
+export LC_NAME="en_US.UTF-8"
+export LC_ADDRESS="en_US.UTF-8"
+export LC_TELEPHONE="en_US.UTF-8"
+export LC_MEASUREMENT="en_US.UTF-8"
+export LC_IDENTIFICATION="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+export TZ="UTC"
+
+# Misc
+alias vi='vim'
+alias ll='ls -l --color=auto'
+alias ls='ls --color=auto'
+
+# ACS
+export PATH_SEP=":"
+export ALMASW_RELEASE=default
+export ALMASW_INSTDIR=$DARED_ROOT/opt/acs/$ALMASW_RELEASE
+export ACSROOT=$ALMASW_INSTDIR/ACSSW
+export ACSDATA=$ALMASW_INSTDIR/acsdata
+export ARCHIVE_CONFIG=$ACSDATA/config/archiveConfig.properties
+export ACS_INSTANCE="0"
+export ACS_TMP=$DARED_ROOT/mnt/tmp
+export LD_PRELOAD=/lib64/libuuid.so.1
+export JAVA_HOME=$DARED_ROOT/opt/java/default
+export ORACLE_HOME=$DARED_ROOT/opt/oracle/instantclient_12_2
+export PYTHONPATH=$DARED_ROOT/opt/acs/default/ACSSW/lib/python/site-packages
+
+# Pipeline
+CASA_PATH=$DARED_ROOT/opt/casa/default
+export CASA_INSTALLATION_TYPE="tar-installation"
+export SCIPIPE_ROOTDIR=$DARED_ROOT/mnt/dataproc
+export SCIPIPE_HEURISTICS=$CASA_PATH/pipeline
+export SCIPIPE_LOGDIR=$DARED_ROOT/mnt/log
+export SCIPIPE_SCRIPTDIR=$SCIPIPE_HEURISTICS/pipeline/recipes
+export DARED_PRODUCTS=$DARED_ROOT/mnt/products
+
+# Redtools configuration parameters
+export REDTOOLS_CONFIG_asa_api='https://2017jul-e2e.asa-test.alma.cl'
+export REDTOOLS_CONFIG_calPipeIF_intents='intents_hifa.xml'
+export REDTOOLS_CONFIG_redPipeIF_intents='intents_hifa.xml'
+export REDTOOLS_CONFIG_redPipeSD_intents='intents_hsd.xml'
+export REDTOOLS_CONFIG_redPipeCS_intents='intents_hifa.xml'
+export REDTOOLS_CONFIG_calPipeIF_procedure='procedure_hifa_calimage.xml'
+export REDTOOLS_CONFIG_redPipeIF_procedure='procedure_hifa_calimage.xml'
+export REDTOOLS_CONFIG_redPipeSD_procedure='procedure_hsd_calimage.xml'
+export REDTOOLS_CONFIG_redPipeCS_procedure='procedure_hifa_calsurvey.xml'
+export REDTOOLS_CONFIG_casa_cmd='casa --nogui --pipeline --nocrashreport'
+export REDTOOLS_CONFIG_env_cmd='source /opt/dared/etc/'$DARED
+export REDTOOLS_CONFIG_dataproc_dir='/opt/dared/mnt/dataproc'
+export REDTOOLS_CONFIG_products_dir='/opt/dared/mnt/products'
+export REDTOOLS_CONFIG_spool_dir='/opt/dared/mnt/spool'
+export REDTOOLS_CONFIG_log_dir='/opt/dared/mnt/log'
+export REDTOOLS_CONFIG_trash_dir='/opt/dared/mnt/trash'
+
+# Redtools flags for default behaviour 
+export REDTOOLS_FLAG_step_casa_pipescript_include_legacy_fixes=True
+export REDTOOLS_FLAG_step_casa_restorepipescript_include_legacy_fixes=True
+export REDTOOLS_FLAG_step_da_permissions=True
+export REDTOOLS_FLAG_step_edit_ppr_eb=True
+export REDTOOLS_FLAG_step_edit_ppr_relative_path=True
+export REDTOOLS_FLAG_step_environ_config=True
+export REDTOOLS_FLAG_step_execute_ppr_from_ms_calPipeIF=True
+export REDTOOLS_FLAG_step_execute_ppr_from_ms_redPipeCS=True
+export REDTOOLS_FLAG_step_execute_ppr_from_ms_redPipeIF=True
+export REDTOOLS_FLAG_step_execute_ppr_from_ms_redPipeSD=True
+export REDTOOLS_FLAG_step_execute_ppr_importonly=True
+export REDTOOLS_FLAG_step_fix_multi_sbs=True
+export REDTOOLS_FLAG_step_get_analysis_utils=True
+export REDTOOLS_FLAG_step_get_apa_qa0_flags=True
+export REDTOOLS_FLAG_step_get_apa_qa2_flags=True
+export REDTOOLS_FLAG_step_get_asdm=True
+export REDTOOLS_FLAG_step_get_eb_on_ppr=True
+export REDTOOLS_FLAG_step_get_execution_directory=True
+export REDTOOLS_FLAG_step_get_ppr=True
+export REDTOOLS_FLAG_step_get_ppr_rawdata=False
+export REDTOOLS_FLAG_step_get_rawdata=True
+export REDTOOLS_FLAG_step_get_sacm_flagtemplate=False
+export REDTOOLS_FLAG_step_get_xtss_mous_state=True
+export REDTOOLS_FLAG_step_legacy_csv2555=True
+export REDTOOLS_FLAG_step_legacy_fix_fixplanets=True
+export REDTOOLS_FLAG_step_legacy_fix_fixsyscaltimes=True
+export REDTOOLS_FLAG_step_log_casa_environment=True
+export REDTOOLS_FLAG_step_log_depencencies_specs=True
+export REDTOOLS_FLAG_step_log_hw_specs=True
+export REDTOOLS_FLAG_step_log_os_environ=True
+export REDTOOLS_FLAG_step_log_os_specs=True
+export REDTOOLS_FLAG_step_log_plrun_attributes=True
+export REDTOOLS_FLAG_step_log_rawdata_on_disk=True
+export REDTOOLS_FLAG_step_log_shell_environment=True
+export REDTOOLS_FLAG_step_move_products_to_staging_apa=True
+export REDTOOLS_FLAG_step_move_working_to_spool_area=True
+export REDTOOLS_FLAG_step_put_xtss_mous_state=True
+export REDTOOLS_FLAG_step_rc_init_user_files=True
+export REDTOOLS_FLAG_step_rename_e2e_root_dir=True
+export REDTOOLS_FLAG_step_self_test=True
+export REDTOOLS_FLAG_step_set_ppr_file=True
+export REDTOOLS_FLAG_step_set_plrun_paths=True
+export REDTOOLS_FLAG_step_set_ppr_file=True
+export REDTOOLS_FLAG_step_set_relative_path=True
+export REDTOOLS_FLAG_step_update_antenna_positions_csv=True
+export REDTOOLS_FLAG_step_update_flux_csv=True
+export REDTOOLS_FLAG_step_update_jyperk_csv=True
+export REDTOOLS_FLAG_step_working_dir=True
+
+# All
+export PATH=$ACSROOT/bin:$DARED_ROOT/bin:$PATH
+export PATH=$JAVA_HOME/bin:$CASA_PATH/bin:$PATH
+
+export LD_LIBRARY_PATH=$ACSROOT/lib:$LD_LIBRARY_PATH
+export DARED_SACM_DB=http://dmg02.sco.alma.cl.:80
+export DARED_ROOT
+export DARED
+export DA_GROUP

@@ -1,0 +1,373 @@
+
+#   ____   _____ ______ 
+#  / __ \ / ____|  ____|
+# | |  | | (___ | |__   
+# | |  | |\___ \|  __|  
+# | |__| |____) | |     
+#  \____/|_____/|_|     
+#                       
+# TNS Entries for OSF
+#
+
+LISTENER_ORA1.OSF.CL =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = ora1-vip.osf.alma.cl)(PORT = 1521))
+
+LISTENER_ORA2.OSF.CL =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = ora2-vip.osf.alma.cl)(PORT = 1521))
+
+RMAN.OSF.CL =
+  (DESCRIPTION =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = oem12c.osf.alma.cl)(PORT = 1521))
+    (CONNECT_DATA =
+      (SERVER = DEDICATED)
+      (SERVICE_NAME = RMAN.OSF.CL)
+    )
+)
+
+ALMA1.OSF.CL =
+  (DESCRIPTION =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = ora.osf.alma.cl)(PORT = 1521))
+    (CONNECT_DATA =
+      (SERVER = DEDICATED)
+      (SERVICE_NAME = ALMA.OSF.CL)
+      (SID = ALMA1)
+    )
+  )
+
+ALMA2.OSF.CL =
+  (DESCRIPTION =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = ora.osf.alma.cl)(PORT = 1521))
+    (CONNECT_DATA =
+      (SERVER = DEDICATED)
+      (SERVICE_NAME = ALMA.OSF.CL)
+      (SID = ALMA2)
+    )
+  )
+
+ALMA.OSF.CL =
+    (DESCRIPTION =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = ora.osf.alma.cl)(PORT = 1521))
+      (CONNECT_DATA =
+        (SERVER = DEDICATED)
+        (SERVICE_NAME = ALMA.OSF.CL)
+      )
+    )
+
+ALMA_ONLINE.OSF.CL =
+    (DESCRIPTION =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = ora.osf.alma.cl)(PORT = 1521))
+      (CONNECT_DATA =
+        (SERVER = DEDICATED)
+        (SERVICE_NAME = ONLINE.OSF.CL)
+      )
+    )
+
+ALMA_LOG.OSF.CL =
+    (DESCRIPTION =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = ora.osf.alma.cl)(PORT = 1521))
+      (CONNECT_DATA =
+        (SERVER = DEDICATED)
+        (SERVICE_NAME = ONLINE.OSF.CL)
+      )
+    )
+
+ALMA_OFFLINE.OSF.CL =
+    (DESCRIPTION =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = ora.osf.alma.cl)(PORT = 1521))
+      (CONNECT_DATA =
+        (SERVER = DEDICATED)
+        (SERVICE_NAME = OFFLINE.OSF.CL)
+      )
+    )
+
+ALMA_TMC.OSF.CL =
+    (DESCRIPTION =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = ora.osf.alma.cl)(PORT = 1521))
+      (CONNECT_DATA =
+        (SERVER = DEDICATED)
+        (SERVICE_NAME = TMC.OSF.CL)
+      )
+    )
+
+NGAS.OSF.CL =
+    (DESCRIPTION =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = ora.osf.alma.cl)(PORT = 1521))
+      (CONNECT_DATA =
+        (SERVER = DEDICATED)
+        (SERVICE_NAME = NGAS.OSF.CL)
+      )
+    )
+
+#   _____  _____ ____  
+#  / ____|/ ____/ __ \ 
+# | (___ | |   | |  | |
+#  \___ \| |   | |  | |
+#  ____) | |___| |__| |
+# |_____/ \_____\____/ 
+#                      
+# TNS Entries for SCO
+#
+
+
+LISTENER_ORA1.SCO.CL =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = ora1-vip.sco.alma.cl)(PORT = 1521))
+
+LISTENER_ORA2.SCO.CL =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = ora2-vip.sco.alma.cl)(PORT = 1521))
+
+RMAN.SCO.CL =
+  (DESCRIPTION =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = oem12c.sco.alma.cl)(PORT = 1521))
+    (CONNECT_DATA =
+      (SERVER = DEDICATED)
+      (SERVICE_NAME = RMAN.SCO.CL)
+    )
+)
+
+ALMA1.SCO.CL =
+  (DESCRIPTION =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = ora.sco.alma.cl)(PORT = 1521))
+    (CONNECT_DATA =
+      (SERVER = DEDICATED)
+      (SERVICE_NAME = ALMA.SCO.CL)
+      (SID = ALMA1)
+    )
+  )
+
+
+ALMA2.SCO.CL =
+  (DESCRIPTION =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = ora.sco.alma.cl)(PORT = 1521))
+    (CONNECT_DATA =
+      (SERVER = DEDICATED)
+      (SERVICE_NAME = ALMA.SCO.CL)
+      (SID = ALMA2)
+    )
+  )
+
+ALMA.SCO.CL =
+    (DESCRIPTION =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = ora.sco.alma.cl)(PORT = 1521))
+      (CONNECT_DATA =
+        (SERVER = DEDICATED)
+        (SERVICE_NAME = ALMA.SCO.CL)
+      )
+    )
+
+ALMA_ONLINE.SCO.CL =
+    (DESCRIPTION =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = ora.sco.alma.cl)(PORT = 1521))
+      (CONNECT_DATA =
+        (SERVER = DEDICATED)
+        (SERVICE_NAME = ONLINE.SCO.CL)
+      )
+    )
+
+ALMA_LOG.SCO.CL =
+    (DESCRIPTION =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = ora.sco.alma.cl)(PORT = 1521))
+      (CONNECT_DATA =
+        (SERVER = DEDICATED)
+        (SERVICE_NAME = ONLINE.SCO.CL)
+      )
+    )
+
+ALMA_OFFLINE.SCO.CL =
+    (DESCRIPTION =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = ora.sco.alma.cl)(PORT = 1521))
+      (CONNECT_DATA =
+        (SERVER = DEDICATED)
+        (SERVICE_NAME = OFFLINE.SCO.CL)
+      )
+    )
+
+ALMA_TMC.SCO.CL =
+    (DESCRIPTION =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = ora.sco.alma.cl)(PORT = 1521))
+      (CONNECT_DATA =
+        (SERVER = DEDICATED)
+        (SERVICE_NAME = TMC.SCO.CL)
+      )
+    )
+
+NGAS.SCO.CL =
+    (DESCRIPTION =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = ora.sco.alma.cl)(PORT = 1521))
+      (CONNECT_DATA =
+        (SERVER = DEDICATED)
+        (SERVICE_NAME = NGAS.SCO.CL)
+      )
+    )
+
+BACKUP.SCO.CL =
+  (DESCRIPTION =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = ora.sco.alma.cl)(PORT = 1521))
+    (CONNECT_DATA =
+      (SERVER = DEDICATED)
+      (SERVICE_NAME = BACKUP.SCO.CL)
+    )
+  )
+
+ALMAI1.SCO.CL =
+  (DESCRIPTION =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = orasw.apotest.alma.cl)(PORT = 1521))
+    (CONNECT_DATA =
+      (SERVER = DEDICATED)
+      (SID = ALMAI1)
+    )
+  )
+
+ALMAI2.SCO.CL =
+  (DESCRIPTION =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = orasw.apotest.alma.cl)(PORT = 1521))
+    (CONNECT_DATA =
+      (SERVER = DEDICATED)
+      (SID = ALMAI2)
+    )
+  )
+
+ALMAI3.SCO.CL =
+  (DESCRIPTION =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = orasw.apotest.alma.cl)(PORT = 1521))
+    (CONNECT_DATA =
+      (SERVER = DEDICATED)
+      (SID = ALMAI3)
+    )
+  )
+
+ALMAON1.SCO.CL =
+  (DESCRIPTION =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = orasw.apotest.alma.cl)(PORT = 1521))
+    (CONNECT_DATA =
+      (SERVER = DEDICATED)
+      (SID = ALMAON1)
+    )
+  )
+
+ALMAON2.SCO.CL =
+  (DESCRIPTION =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = orasw.apotest.alma.cl)(PORT = 1521))
+    (CONNECT_DATA =
+      (SERVER = DEDICATED)
+      (SID = ALMAON2)
+    )
+  )
+
+ALMAON3.SCO.CL =
+  (DESCRIPTION =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = orasw.apotest.alma.cl)(PORT = 1521))
+    (CONNECT_DATA =
+      (SERVER = DEDICATED)
+      (SID = ALMAON3)
+    )
+  )
+
+ALMASW.SCO.CL =
+  (DESCRIPTION =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = oradev.apotest.alma.cl)(PORT = 1521))
+    (CONNECT_DATA =
+      (SERVER = DEDICATED)
+      (SID = ALMASW)
+    )
+  )
+
+####
+## ARCS
+####
+ORIG-ALMA.ARC.EU =
+  (DESCRIPTION =
+    (SDU=32767)
+    (SEND_BUF_SIZE=1125000)
+    (RECV_BUF_SIZE=1125000)
+    (ADDRESS_LIST =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = 134.171.14.34)(PORT = 1521))
+    )
+    (CONNECT_DATA =
+      (SERVICE_NAME = ALMA.ARC.EU)
+    )
+  )
+
+ALMA.ARC.EU =
+  (DESCRIPTION =
+    (SDU=32767)
+    (SEND_BUF_SIZE=1125000)
+    (RECV_BUF_SIZE=1125000)
+    (ADDRESS_LIST =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = arcdb1.hq.eso.org)(PORT = 1521))
+    )
+    (CONNECT_DATA =
+      (SERVICE_NAME = ALMA.ARC.EU)
+    )
+  )
+
+ALMA.ARC.EA =
+  (DESCRIPTION =
+    (SDU=32767)
+    (SEND_BUF_SIZE=1125000)
+    (RECV_BUF_SIZE=1125000)
+    (ADDRESS_LIST =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = alma-ora01.mtk.nao.ac.jp)(PORT = 1521))
+    )
+    (CONNECT_DATA =
+      (SERVICE_NAME = ALMA2.ARC.EA)
+    )
+  )
+
+ALMA.ARC.NA =
+  (DESCRIPTION =
+    (SDU=32767)
+    (SEND_BUF_SIZE=1125000)
+    (RECV_BUF_SIZE=1125000)
+    (ADDRESS_LIST =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = 10.2.140.18)(PORT = 1521))
+    )
+    (CONNECT_DATA =
+      (SERVICE_NAME = ALMA.ARC.NA)
+    )
+  )
+
+GOLDENGATE.SCO.CL =
+    (DESCRIPTION =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = ora.sco.alma.cl)(PORT = 1521))
+      (CONNECT_DATA =
+        (SERVER = DEDICATED)
+        (SERVICE_NAME = GOLDENGATE.SCO.CL)
+      )
+    )
+
+ALMAT1.OSF.CL =
+  (DESCRIPTION =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = tb-oraosf.osf.alma.cl)(PORT = 1521))
+    (CONNECT_DATA =
+      (SERVER = DEDICATED)
+      (SERVICE_NAME = ALMAT1.OSF.CL)
+    )
+  )
+
+ALMAT2.OSF.CL =
+  (DESCRIPTION =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = tb-oraosf.osf.alma.cl)(PORT = 1521))
+    (CONNECT_DATA =
+      (SERVER = DEDICATED)
+      (SERVICE_NAME = ALMAT2.OSF.CL)
+    )
+  )
+
+OSF_LABS.OSF.CL =
+  (DESCRIPTION =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = osf-arc.osf.alma.cl)(PORT = 1521))
+    (CONNECT_DATA =
+      (SERVER = DEDICATED)
+      (SERVICE_NAME = ALMA.ESO.ORG)
+    )
+  )
+
+ATEST2.OSF.CL =
+  (DESCRIPTION =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = oradevosf-scan.osf.alma.cl)(PORT = 1521))
+    (CONNECT_DATA =
+      (SERVER = DEDICATED)
+      (SERVICE_NAME = ATEST2.OSF.CL)
+    )
+  )
+

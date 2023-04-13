@@ -1,0 +1,74 @@
+##############
+# general section
+archive.db.mode=operational
+#archive.db.tnsFileDirectory=/users/fmorales/sara/opt/oracle/instantclient_12_2/config
+archive.oracle.user=alma
+archive.oracle.passwd=<password>
+archive.db.connection=jdbc:oracle:thin:@ALMA_OFFLINE.SCO.CL
+
+##################
+# XMLstore section
+archive.xmldb.driver=org.exist.xmldb.DatabaseImpl
+archive.xmldb.name=db
+archive.xmldb.cache=100
+
+##############################################
+# TMCDB section
+# maybe later... archive.tmcdb.connection=ALMA
+###archive.tmcdb.connection=jdbc:oracle:thin:@//oraclscopub.sco.alma.cl:1521/ALMA.SCOPUB.CL
+#archive.tmcdb.connection=jdbc:oracle:thin:@//naasc-oracle.cv.nrao.edu:1521/ALMA.ARC.NA
+#archive.tmcdb.user=tmc
+#archive.tmcdb.passwd=<password>
+#archive.tmcdb.configuration=something
+#archive.tmcdb.monitoring.only=False
+#archive.tmcdb.monitoring.enable=True 
+
+
+
+##################################################################
+# relational section, ie. the rest of subsystems accessing the DB
+# directly, but not monitor, log or statearchive data. This is
+# currently used only by the Shiftlog
+###archive.relational.connection=jdbc:oracle:thin:@//oraclscopub.sco.alma.cl:1521/ALMA.SCOPUB.CL
+archive.relational.connection=jdbc:oracle:thin:@ALMA_OFFLINE.SCO.CL
+archive.relational.user=alma
+archive.relational.passwd=<password>
+
+
+#########
+# schemas
+archive.bulkstore.schema=ASDMBinaryTable
+archive.bulkreceiver.schema=sdmDataHeader
+
+#######
+# NGAS 
+archive.ngast.servers=ngas01.sco.alma.cl:7777,ngas01.sco.alma.cl:7778,ngas01.sco.alma.cl:7779,ngas01.sco.alma.cl:7780,ngas02.sco.alma.cl:7777,ngas02.sco.alma.cl:7778,ngas02.sco.alma.cl:7779,ngas02.sco.alma.cl:7780,ngas03.sco.alma.cl:7777,ngas03.sco.alma.cl:7778,ngas03.sco.alma.cl:7779,ngas03.sco.alma.cl:7780,ngas04.sco.alma.cl:7777,ngas04.sco.alma.cl:7778,ngas04.sco.alma.cl:7779,ngas04.sco.alma.cl:7780
+archive.ngast.bufferDir=/tmp
+archive.ngast.interface=ngamsArchiveClient -dummy parameter
+archive.datapacker.db.connection=jdbc:oracle:thin:@NGAS.SCO.CL
+archive.datapacker.oracle.user=ngas
+archive.datapacker.oracle.passwd=<password>
+archive.cache.feeder.threads.nb=2
+## should be plenty. If JClient reports timeouts this can be increased.
+archive.ngas.socketReadTimeoutSeconds = 300
+
+## how long do we wait for a bulk data file to completely download before calling a timeout?
+## default is 15 minutes.
+## You would think bigger is better, but if there is a connection error we could wait for a
+## long long time before the DataPacker gives up.
+archive.ngas.completionTimeoutMinutes=30
+
+##############
+# bulkreceiver
+###2016-02-04- mhatz ####archive.bulkreceiver.debug=False
+archive.bulkreceiver.debug=False
+archive.bulkreceiver.DataBufferRetry=30 
+archive.bulkreceiver.BufferThreadNumber=8 
+archive.bulkreceiver.BufferThreadWaitSleep=2000 
+archive.bulkreceiver.FetchThreadRetry=100 
+archive.bulkreceiver.FetchThreadRetrySleep=400000
+archive.bulkreceiver.DataBufferMax=1048576
+archive.bulkreceiver.maxThroughput=30
+
+# LDAP
+#archive.userrepository.provider.url=ldap://support:389/
